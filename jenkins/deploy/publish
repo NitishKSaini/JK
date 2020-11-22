@@ -1,7 +1,6 @@
 #!/bin/bash
-export image=$(sed -n '1p' /tmp/auth)
+export IMAGE=$(sed -n '1p' /tmp/auth)
 export TAG=$(sed -n '2p' /tmp/auth)
 export PASS=$(sed -n '3p' /tmp/auth)
 docker login -u nitishsaini -p $PASS
-docker pull nitishsaini/$image:$TAG
 cd /home/nsaini/maven && docker-compose up -d
